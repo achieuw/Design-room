@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Design room</title>
+</head>
+<body>
+  <p id="debug"></p>
+  <h1 style="color: gray; font-family: Helvetica; font-weight: 400; text-align: center;">Designrum</h1>
+  
+
+  <ul id="poster-size-menu">
+    <p>Mått (cm)</p>
+    <li id="size-1">45x32</li>
+    <li id="size-2">50x70</li>
+    <li id="size-3">67x48</li>
+    <li id="size-4">90x64</li>
+  </ul>  
+
+<!----- Design room ----->
+  <div id="design-room-container">
+  
+    
+    <div id="design-room-poster-container">
+      <button onmousedown="drag()" id="container-btn">Flytta allt</button>
+    </div>
+  </div>
+
+  <div class="design-poster-buttons">
+    <button onclick="addPoster()" class="poster-button">Lägg till poster</button>
+    <button onclick="removePoster()" class="poster-button">Ta bort poster</button>
+  </div>
+
+<!--x-- Design room --x-->
+
+<!----- Design controllers ----->
+<div id="design-controllers">
+  
+  <div class="design-option">
+    <label for="backgrounds">Rum: </label>
+    <select onchange="changeRoom()" id="backgrounds">
+      <option value="vardagsrum-1">Vardagsrum</option>
+      <option value="sovrum-1">Sovrum 1</option>
+      <option value="sovrum-2">Sovrum 2</option>
+    </select>
+  </div>
+  
+  <div class="design-option">
+    <label for="posters">Poster: </label>
+    <select onchange="changePoster()" id="posters">
+      <option value="poster-1">Poster 1</option>
+      <option value="poster-2">Poster 2</option>
+      <option value="poster-3">Poster 3</option>
+    </select>
+  </div>
+
+  <div class="design-option">
+    <label for="borders">Ram: </label>
+    <select onchange="changeBorder()" id="borders">
+      <option value="border-1">Ram 1</option>
+      <option value="border-2">Ram 2</option>
+      <option value="border-3">Ram 3</option>
+    </select>
+  </div>
+
+  <div class="design-option">
+    <label for="measurement">Mått (cm): </label>
+    <select onchange="changeSize()" id="measurement">
+      <option value="size-1">45x32</option>
+      <option value="size-2">67x48</option>
+      <option value="size-3">90x64</option>
+    </select>
+  </div>
+</div>
+<!--x-- Design controllers --x-->
+
+<!-- Custom script -->
+  <script src="main.js"></script>
+
+</body>
+</html>
