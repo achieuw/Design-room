@@ -54,22 +54,20 @@ function activatePoster(element){
 // Set new initial position and activate drag when element is clicked
 function dragStart(e) {
   e.preventDefault();
-  
+
   // If target is the container
-  if(e.target === posterContainer || e.target === posterContainerBtn){
+  if(e.target === posterContainerBtn){
     activeDragElement = posterContainer;
     activeDrag = true;
-  } else { // If target is a poster
+
+  // If target is a poster
+  }else{ 
     posters.forEach(function(element){
       if (e.target === element) {
         activeDrag = true;
       
         if(e.target != activeDragElement){
           activatePoster(element);
-            initialX = e.clientX;
-            initialY = e.clientY;
-            offsetX = posterContainer.getBoundingClientRect().left;
-            offsetY = posterContainer.getBoundingClientRect().top;
         }
       }   
     });
